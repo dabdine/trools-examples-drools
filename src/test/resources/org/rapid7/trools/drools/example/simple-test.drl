@@ -1,0 +1,10 @@
+package org.rapid7.trools.example; 
+import org.rapid7.trools.example.Person;
+
+rule "simple-test"
+    when 
+        p : Person ( name == "Bill" )  
+    then 
+        retract(p);
+        insert(new String("hello world"));
+end
